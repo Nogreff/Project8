@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="memory_game_container">
+      <div id="time_and_moves">
+        <div id="timer">Time: 100</div>
+        <div id="moves">Moves: 0</div>
+      </div>
+      <div id="memory_game"></div>
+    </div>
+    <dialog id="memo_lose" class="memo_dialog">
+      <div class="dialog_image"></div>
+      <button id="replay_lose" class="memo_button"></button>
+    </dialog>
+    <dialog id="memo_win" class="memo_dialog">
+      <div class="dialog_image"></div>
+      <button id="replay_win" class="memo_button"></button>
+    </dialog>
+  </body>
+  <script type="module" src="/src/main.ts" defer></script>
+</html>

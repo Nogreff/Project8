@@ -1,0 +1,234 @@
+body,
+html {
+  margin: 0 auto;
+  background: linear-gradient(120deg, #07cabb, #6b93be);
+  overflow: hidden;
+  font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
+}
+#memory_game_container {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#time_and_moves {
+  width: 26rem;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: #2a334c;
+  color: white;
+  padding: 0 2rem;
+  margin-bottom: 5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: -2px -2px 3px darkslategray, 2px 2px 3px darkslategray;
+}
+@media (max-width: 50rem) {
+  #time_and_moves {
+    font-size: 1.1rem;
+  }
+}
+#moves,
+#timer {
+  width: 9rem;
+  text-align: left;
+}
+#moves::before,
+#timer::before {
+  content: "";
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 65%;
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  display: inline;
+  padding: 1rem;
+}
+#moves::before {
+  mask-image: url("/src/img/moves.png");
+}
+#timer::before {
+  mask-image: url("/src/img/timer.png");
+}
+@media (max-width: 50rem) {
+  #time_and_moves {
+    width: 16rem;
+  }
+}
+#memory_game {
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a334c;
+  border-radius: 1rem;
+  box-shadow: -2px -2px 4px darkslategray, 2px 2px 3px darkslategray;
+}
+@media (max-width: 50rem) {
+  #memory_game {
+    width: 20rem;
+    height: 24rem;
+  }
+}
+.memo_dialog {
+  min-width: 24rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #6b93be;
+  padding: 0;
+  font-size: 4rem;
+}
+@media (max-width: 50rem) {
+  .memo_dialog {
+    min-width: 18rem;
+    height: 15rem;
+    font-size: 3rem;
+  }
+}
+#memo_win {
+  color: greenyellow;
+  font-weight: 600;
+  border-color: green;
+}
+#memo_lose {
+  color: red;
+  font-weight: 600;
+}
+#memo_lose > div {
+  background: url("/src/img/gameOver.png") no-repeat center;
+  background-size: 50%;
+}
+#memo_win > div {
+  background: url("/src/img/winner.png") no-repeat center;
+  background-size: 35%;
+}
+.dialog_image {
+  width: 100%;
+  height: 8rem;
+}
+@media (max-width: 50rem) {
+  #memo_lose > div,
+  #memo_win > div {
+    background-size: contain;
+  }
+}
+.memo_button {
+  background: url("/src/img/replay.png");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  margin: 0;
+  border-radius: 1rem;
+}
+.memo_container {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid gold;
+  margin: 0.5rem;
+  position: relative;
+  transition: all 500ms linear;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #444054, #615c6c);
+  background-size: 100%;
+}
+.card.reset {
+  transition: all 0ms linear;
+}
+@media (max-width: 50rem) {
+  .card {
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: 0.1rem;
+  }
+}
+.card_front,
+.card_back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.memo_card_0,
+.memo_card_8 {
+  background-image: url("/src/img/card_1.png");
+}
+.memo_card_1,
+.memo_card_9 {
+  background-image: url("/src/img/card_2.png");
+}
+.memo_card_2,
+.memo_card_10 {
+  background-image: url("/src/img/card_3.png");
+}
+.memo_card_3,
+.memo_card_11 {
+  background-image: url("/src/img/card_4.png");
+}
+.memo_card_4,
+.memo_card_12 {
+  background-image: url("/src/img/card_5.png");
+}
+.memo_card_5,
+.memo_card_13 {
+  background-image: url("/src/img/card_6.png");
+}
+.memo_card_6,
+.memo_card_14 {
+  background-image: url("/src/img/card_7.png");
+}
+.memo_card_7,
+.memo_card_15 {
+  background-image: url("/src/img/card_8.png");
+}
+.card_front {
+  background-image: url("../img/sleve.png");
+  background: linear-gradient(180deg, #444054, #615c6c);
+  opacity: 1;
+  background-size: 70%;
+  border-radius: 1rem;
+  z-index: 4;
+  backface-visibility: hidden;
+}
+.card_back {
+  z-index: 1;
+  border-radius: 1rem;
+  transform: rotateY(180deg);
+}
+.memo_container.checked .card {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.match {
+  border: 2px solid green;
+}
